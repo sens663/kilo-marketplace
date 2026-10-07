@@ -1,0 +1,24 @@
+id: targetwise
+name: TargetWise
+description: Find B2B companies and contacts, enrich selected profiles, and look up available work emails and business phones through eleven hosted MCP tools. Data calls consume TargetWise workspace credits.
+author: TargetWise
+url: https://github.com/sens663/targetwise-mcp
+category: business
+prerequisites:
+  - A TargetWise account with a workspace API key from Dashboard > Developers
+  - Available TargetWise workspace credits for metered data calls
+  - A client supporting Streamable HTTP and custom Authorization headers
+content:
+  - name: Remote Streamable HTTP
+    content: |
+      {
+        "type": "streamable-http",
+        "url": "https://targetwise.ai/api/mcp",
+        "headers": {
+          "Authorization": "Bearer {{TARGETWISE_API_KEY}}"
+        }
+      }
+parameters:
+  - name: TargetWise workspace API key
+    key: TARGETWISE_API_KEY
+    placeholder: your_targetwise_workspace_api_key
