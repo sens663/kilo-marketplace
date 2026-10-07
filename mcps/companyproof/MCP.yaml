@@ -1,0 +1,29 @@
+id: companyproof
+name: CompanyProof
+description: >-
+  Search legal companies, retrieve available registry profiles and verify six
+  company identity fields with source evidence. Includes search_companies,
+  get_company_profile and verify_company_claims. Public beta; live data requires
+  an eligible CompanyProof account and shared credits. The proof tool creates
+  proof records and can enable monitoring where eligible.
+author: CompanyProof
+url: https://github.com/sens663/companyproof-mcp
+category: business
+prerequisites:
+  - An eligible CompanyProof account and shared credits for live data calls
+  - A CompanyProof Bearer API key with company.read and proof.write access
+  - "Setup documentation: https://companyproof.ai/docs/mcp"
+content:
+  - name: Streamable HTTP
+    content: |
+      {
+        "type": "streamable-http",
+        "url": "https://companyproof.ai/v2/mcp",
+        "headers": {
+          "Authorization": "Bearer {{COMPANYPROOF_API_KEY}}"
+        }
+      }
+parameters:
+  - name: CompanyProof API key
+    key: COMPANYPROOF_API_KEY
+    placeholder: your_companyproof_api_key
